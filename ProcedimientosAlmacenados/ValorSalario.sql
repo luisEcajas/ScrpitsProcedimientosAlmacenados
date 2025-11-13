@@ -1,0 +1,17 @@
+#PROCEDIMIENTO QUE MUESTRA LOS EMPLEADOS CON SALARIO MAYOR O IGUAL A CIERTO VALOR
+DELIMITER //
+
+CREATE PROCEDURE VerPorSalario (IN SalarioMinimo DECIMAL(10,2))
+BEGIN 
+  
+  
+SELECT Nombre_empleado,Salario
+FROM empleados
+WHERE salario >= SalarioMinimo;
+ 
+END //
+
+DELIMITER ;
+
+#INVOCAMOS
+CALL VerPorSalario(2950000.00);
